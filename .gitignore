@@ -20,3 +20,28 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+#java specific
+*.class
+*/WEB-INF/classes/**
+*/bin/**
+
+## generic files to ignore
+*.log
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
+*/work/**
+*/public/**
+*/.tomcatplugin
+*/.settings/**
+.settings
+*/target/**
+.cvsignore
+
+.classpath
+.project
+
+.gitignore
