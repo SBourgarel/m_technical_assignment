@@ -23,7 +23,4 @@ public class Ingredients_division {
 	public void setIngredients(List<Ingredient> ingredients) {
 		this.ingredients = ingredients;
 	}
-	
-	
-
 }

@@ -24,11 +24,11 @@ public class RecipeLoaderTest {
 		assertEquals("Recipe container should contain 3 recipes", 3,
 				RecipesContainer.getInstance().getRecipesList().size());
 		assertEquals("First recipe '30 Minute Chili' loaded", "30 Minute Chili",
-				RecipesContainer.getInstance().getRecipesList().get(0).getRecipe().getHead().getTitle());
+				RecipesContainer.getInstance().getRecipesList().get(0).getHead().getTitle());
 		assertEquals("Second recipe 'Amaretto Cake' loaded", "Amaretto Cake",
-				RecipesContainer.getInstance().getRecipesList().get(1).getRecipe().getHead().getTitle());
+				RecipesContainer.getInstance().getRecipesList().get(1).getHead().getTitle());
 		assertEquals("Third recipe 'Another Zucchini Dish' loaded", "Another Zucchini Dish",
-				RecipesContainer.getInstance().getRecipesList().get(2).getRecipe().getHead().getTitle());
+				RecipesContainer.getInstance().getRecipesList().get(2).getHead().getTitle());
 	}
 
 	@Test

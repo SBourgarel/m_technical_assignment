@@ -3,11 +3,11 @@ package com.sbourgarel.recipesManagement.svc;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.sbourgarel.recipesManagement.model.Recipeml;
+import com.sbourgarel.recipesManagement.model.Recipe;
 
 public class RecipesContainer {
 	private static RecipesContainer instance = null;
-	private List<Recipeml> recipesList;
+	private List<Recipe> recipesList;
 
 	private RecipesContainer() {
 		this.recipesList = new ArrayList<>();
@@ -20,7 +20,7 @@ public class RecipesContainer {
 		return instance;
 	}
 	
-	public List<Recipeml> getRecipesList(){
+	public List<Recipe> getRecipesList(){
 		return this.recipesList;
 	}
 }

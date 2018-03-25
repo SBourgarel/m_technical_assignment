@@ -10,17 +10,18 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 
+import com.sbourgarel.recipesManagement.model.Recipe;
 import com.sbourgarel.recipesManagement.model.Recipeml;
 import com.sbourgarel.recipesManagement.svc.RecipesContainer;
 
 public class RecipeLoader {
 
 	/**
-	 * Load all the Recipemls contained inside a repository. The Recipemls found
+	 * Load all the Recipes contained inside a repository. The Recipes found
 	 * are saved in RecipeContainer singleton
 	 * 
 	 * @param repository
-	 *            the repository where to look for Recipemls
+	 *            the repository where to look for Recipes
 	 */
 	public void loadRecipes(String repository) {
 		List<File> fileList = this.getXmlFiles(repository);
@@ -30,7 +31,7 @@ public class RecipeLoader {
 			return;
 		}
 
-		List<Recipeml> recipes = this.getRecipesFromFileList(fileList);
+		List<Recipe> recipes = this.getRecipesFromFileList(fileList);
 
 		this.saveRecipes(recipes);
 	}
@@ -59,15 +60,15 @@ public class RecipeLoader {
 	}
 
 	/**
-	 * Get all the Recipemls contained in a list of xml files
+	 * Get all the Recipes contained in a list of xml files
 	 * 
 	 * @param files
-	 *            List of files containing Recipeml objects
-	 * @return the list of Recipemls object retrieved
+	 *            List of files containing Recipe objects
+	 * @return the list of Recipes object retrieved
 	 */
-	private List<Recipeml> getRecipesFromFileList(List<File> files) {
-		List<Recipeml> recipes = new ArrayList<>();
-		Recipeml recipe;
+	private List<Recipe> getRecipesFromFileList(List<File> files) {
+		List<Recipe> recipes = new ArrayList<>();
+		Recipe recipe;
 
 		for (File file : files) {
 			recipe = this.getRecipeFromXmlFile(file);
@@ -79,13 +80,13 @@ public class RecipeLoader {
 	}
 
 	/**
-	 * Parse a xml file and extract the Recipeml contained inside
+	 * Parse a xml file and extract the Recipe contained inside
 	 * 
 	 * @param file
-	 *            the xml file containing the Recipeml
-	 * @return the Recipeml retrieved
+	 *            the xml file containing the Recipe
+	 * @return the Recipe retrieved
 	 */
-	private Recipeml getRecipeFromXmlFile(File file) {
+	private Recipe getRecipeFromXmlFile(File file) {
 		Recipeml recipeml = null;
 
 		try {
@@ -96,17 +97,17 @@ public class RecipeLoader {
 			e.printStackTrace();
 		}
 
-		return recipeml;
+		return recipeml.getRecipe();
 	}
 
 	/**
-	 * Save the list of Recipemls in parameter, to the recipesContainer
+	 * Save the list of Recipes in parameter, to the recipesContainer
 	 * 
 	 * @param recipes
-	 *            List of the Recipemls to be saved
+	 *            List of the Recipes to be saved
 	 */
-	private void saveRecipes(List<Recipeml> recipes) {
-		for (Recipeml recipe : recipes) {
+	private void saveRecipes(List<Recipe> recipes) {
+		for (Recipe recipe : recipes) {
 			RecipesContainer.getInstance().getRecipesList().add(recipe);
 		}
 	}
