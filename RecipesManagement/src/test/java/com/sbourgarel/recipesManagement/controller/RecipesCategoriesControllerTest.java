@@ -32,7 +32,7 @@ public class RecipesCategoriesControllerTest {
 	}
 
 	@Test
-	public void testReturnedObjectNotNullRecipesCategories() {
+	public void testCorrectAmountOfCategoriesReturned() {
 		assertEquals("7 recipes must be retrieved", 7, this.recipesCategoriesController.getCategoies().size());
 	}
 }
