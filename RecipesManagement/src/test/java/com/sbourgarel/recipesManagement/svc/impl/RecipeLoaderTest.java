@@ -14,12 +14,13 @@ public class RecipeLoaderTest {
 
 	@Before
 	public void setUp() {
+
+		RecipesContainer.getInstance().getRecipesList().clear();
 		this.recipeLoader = new RecipeLoader();
 	}
 
 	@Test
 	public void testRecipesLoadedCorrectly() {
-		RecipesContainer.getInstance().getRecipesList().clear();
 		recipeLoader.loadRecipes(ApplicationParam.RECIPES_REPOSITORY);
 		assertEquals("Recipe container should contain 3 recipes", 3,
 				RecipesContainer.getInstance().getRecipesList().size());
@@ -33,14 +34,12 @@ public class RecipeLoaderTest {
 
 	@Test
 	public void testNoFilesRetrievedIfWrongRepository() {
-		RecipesContainer.getInstance().getRecipesList().clear();
 		recipeLoader.loadRecipes(null);
 		assertEquals("No recipe retrieved", 0, RecipesContainer.getInstance().getRecipesList().size());
 	}
 
 	@Test
 	public void testOnlyXmlFilesRetrieved() {
-		RecipesContainer.getInstance().getRecipesList().clear();
 		recipeLoader.loadRecipes(System.getProperty("user.dir") + "/target");
 		assertEquals("No recipe retrieved as there are no xml files on application repository", 0, RecipesContainer.getInstance().getRecipesList().size());
 	}

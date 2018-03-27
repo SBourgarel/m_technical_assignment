@@ -61,6 +61,7 @@ public class RecipeLoader {
 
 	/**
 	 * Get all the Recipes contained in a list of xml files
+	 * It is assumed the 'files' parameter is not null.
 	 * 
 	 * @param files
 	 *            List of files containing Recipe objects
@@ -80,7 +81,8 @@ public class RecipeLoader {
 	}
 
 	/**
-	 * Parse a xml file and extract the Recipe contained inside
+	 * Parse a xml file and extract the Recipe contained inside.
+	 * It is assumed the 'file' parameter is not null.
 	 * 
 	 * @param file
 	 *            the xml file containing the Recipe
@@ -102,6 +104,7 @@ public class RecipeLoader {
 
 	/**
 	 * Save the list of Recipes in parameter, to the recipesContainer
+	 * It is assumed the 'recipes' parameter is not null.
 	 * 
 	 * @param recipes
 	 *            List of the Recipes to be saved
