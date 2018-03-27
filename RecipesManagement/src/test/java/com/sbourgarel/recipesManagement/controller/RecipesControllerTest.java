@@ -32,7 +32,7 @@ public class RecipesControllerTest {
 	}
 
 	@Test
-	public void testStatusCodeGetRecipesInfo() {
+	public void testControllerResponses() {
 		assertEquals("3 recipes must be retrieved", 3, this.recipesController.getRecipes(null, null).size());
 		assertEquals("1 recipe must be retrieved", 1, this.recipesController.getRecipes("dish", null).size());
 		assertEquals("2 recipes must be retrieved", 2, this.recipesController.getRecipes(null, "dish").size());
