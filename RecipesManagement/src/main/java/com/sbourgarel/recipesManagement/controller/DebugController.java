@@ -16,6 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DebugController {
 
+	/**
+	 * 
+	 * @return the deployed version
+	 */
 	@GetMapping(produces = MediaType.TEXT_PLAIN, path = "/debug")
 	public ResponseEntity<String> getDebugInfo() {
 

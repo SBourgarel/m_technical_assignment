@@ -20,7 +20,7 @@ public class DebugControllerTest {
 	
 	@Test
 	public void testGetDebugInfo() {
-		assertEquals("Application status and version must be returned", "Application is up, deployed version = 0.0.1", this.debugController.getDebugInfo().getBody());
+		assertEquals("Application status and version must be returned", "Application is up, deployed version : 0.0.1", this.debugController.getDebugInfo().getBody());
 		assertEquals("HttpStatus must be OK", HttpStatus.OK, this.debugController.getDebugInfo().getStatusCode());
 	}
 }
