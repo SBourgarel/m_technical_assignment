@@ -31,6 +31,6 @@ public class CategoriesSvcTest {
 
 	@Test
 	public void testAllCategoriesRetrieved() {
-		assertEquals("7 recipes must be retrieved", 7, this.categoriesSvc.getAllCategories().size());
+		assertEquals("7 categories must be retrieved", 7, this.categoriesSvc.getAllCategories().size());
 	}
 }
