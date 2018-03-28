@@ -17,8 +17,8 @@ import com.sbourgarel.recipesManagement.svc.RecipesContainer;
 public class RecipeLoader {
 
 	/**
-	 * Load all the Recipes contained inside a repository. The Recipes found
-	 * are saved in RecipeContainer singleton
+	 * Load all the Recipes contained inside a repository. The Recipes found are
+	 * saved in RecipeContainer singleton
 	 * 
 	 * @param repository
 	 *            the repository where to look for Recipes
@@ -49,19 +49,19 @@ public class RecipeLoader {
 		}
 
 		List<File> fileList = Arrays.asList(new File(repository).listFiles(new FilenameFilter() {
-			
+
 			@Override
 			public boolean accept(File dir, String name) {
-		        return name.matches("(.*).xml");
+				return name.matches("(.*).xml");
 			}
 		}));
-		
+
 		return fileList;
 	}
 
 	/**
-	 * Get all the Recipes contained in a list of xml files
-	 * It is assumed the 'files' parameter is not null.
+	 * Get all the Recipes contained in a list of xml files It is assumed the
+	 * 'files' parameter is not null.
 	 * 
 	 * @param files
 	 *            List of files containing Recipe objects
@@ -81,8 +81,8 @@ public class RecipeLoader {
 	}
 
 	/**
-	 * Parse a xml file and extract the Recipe contained inside.
-	 * It is assumed the 'file' parameter is not null.
+	 * Parse a xml file and extract the Recipe contained inside. It is assumed the
+	 * 'file' parameter is not null.
 	 * 
 	 * @param file
 	 *            the xml file containing the Recipe
@@ -103,8 +103,8 @@ public class RecipeLoader {
 	}
 
 	/**
-	 * Save the list of Recipes in parameter, to the recipesContainer
-	 * It is assumed the 'recipes' parameter is not null.
+	 * Save the list of Recipes in parameter, to the recipesContainer It is assumed
+	 * the 'recipes' parameter is not null.
 	 * 
 	 * @param recipes
 	 *            List of the Recipes to be saved

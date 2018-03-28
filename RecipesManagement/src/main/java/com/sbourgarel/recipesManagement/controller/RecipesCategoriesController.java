@@ -5,6 +5,8 @@ import java.util.List;
 import javax.ws.rs.core.MediaType;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,18 +19,18 @@ public class RecipesCategoriesController {
 
 	@Autowired
 	private CategoriesSvc categoriesSvc;
-	
+
 	/**
 	 * 
-	 * @return a list of String containing all the categories stored in all the recipes.
-	 * The list contains no duplicates.
+	 * @return a list of String containing all the categories stored in all the
+	 *         recipes. The list contains no duplicates.
 	 */
 	@GetMapping(produces = MediaType.APPLICATION_JSON)
-	public List<String> getCategoies() {
+	public ResponseEntity<List<String>> getCategoies() {
 		List<String> categories = null;
-						
-		categories = this.categoriesSvc.getAllCategories();			
-		
-		return categories;
+
+		categories = this.categoriesSvc.getAllCategories();
+
+		return new ResponseEntity<List<String>>(categories, HttpStatus.OK);
 	}
 }

@@ -41,7 +41,8 @@ public class RecipeLoaderTest {
 	@Test
 	public void testOnlyXmlFilesRetrieved() {
 		recipeLoader.loadRecipes(System.getProperty("user.dir") + "/target");
-		assertEquals("No recipe retrieved as there are no xml files on application repository", 0, RecipesContainer.getInstance().getRecipesList().size());
+		assertEquals("No recipe retrieved as there are no xml files on application repository", 0,
+				RecipesContainer.getInstance().getRecipesList().size());
 	}
 
 }
